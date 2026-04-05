@@ -30,7 +30,7 @@ export async function GET(req: NextRequest) {
     .from('profiles')
     .select('id, notification_email')
     
-  const profileMap = new Map((profiles || []).map(p => [p.id, p]))
+  const profileMap = new Map((profiles || []).map((p: any) => [p.id, p]))
 
   let totalScanned = 0
   let totalNewReplies = 0
@@ -100,7 +100,7 @@ export async function GET(req: NextRequest) {
   // Bulk send notifications per user
   for (const [userId, newReplies] of Object.entries(userReplies)) {
     if (newReplies.length > 0) {
-      const profile = profileMap.get(userId)
+      const profile: any = profileMap.get(userId)
       if (profile?.notification_email) {
         try {
           await sendNotificationEmail(profile.notification_email, newReplies)

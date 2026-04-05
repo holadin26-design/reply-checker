@@ -108,10 +108,10 @@ export default function Dashboard() {
           <form onSubmit={handleAddMailbox} style={{ background: '#f5f5f5', padding: 16, borderRadius: 8, marginBottom: 16 }}>
             <h3 style={{ fontSize: 14, marginBottom: 12, fontWeight: 600 }}>Add IMAP Inbox</h3>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 16 }}>
-              <input required type="email" placeholder="Email Address" style={input} value={formData.email_address} onChange={e => setFormData({...formData, email_address: e.target.value})} />
-              <input required type="password" placeholder="App Password" style={input} value={formData.password} onChange={e => setFormData({...formData, password: e.target.value})} />
-              <input required type="text" placeholder="IMAP Host (e.g. imap.gmail.com)" style={input} value={formData.imap_host} onChange={e => setFormData({...formData, imap_host: e.target.value})} />
-              <input required type="number" placeholder="IMAP Port" style={input} value={formData.imap_port} onChange={e => setFormData({...formData, imap_port: parseInt(e.target.value)})} />
+              <input required type="email" placeholder="Email Address" style={input} value={formData.email_address} onChange={(e: any) => setFormData({...formData, email_address: e.target.value})} />
+              <input required type="password" placeholder="App Password" style={input} value={formData.password} onChange={(e: any) => setFormData({...formData, password: e.target.value})} />
+              <input required type="text" placeholder="IMAP Host (e.g. imap.gmail.com)" style={input} value={formData.imap_host} onChange={(e: any) => setFormData({...formData, imap_host: e.target.value})} />
+              <input required type="number" placeholder="IMAP Port" style={input} value={formData.imap_port} onChange={(e: any) => setFormData({...formData, imap_port: parseInt(e.target.value)})} />
             </div>
             {addError && <div style={{ color: 'red', fontSize: 12, marginBottom: 12 }}>{addError}</div>}
             <button disabled={isAdding} type="submit" style={primaryBtn}>
@@ -124,7 +124,7 @@ export default function Dashboard() {
           <p style={{ color: '#888', fontSize: 14 }}>No inboxes connected yet. Add a mailbox to start scanning.</p>
         ) : (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-            {mailboxes.map((acc) => (
+            {mailboxes.map((acc: any) => (
               <div key={acc.id} style={inboxRow}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                   <div style={avatar}>{acc.email_address[0].toUpperCase()}</div>
@@ -163,7 +163,7 @@ export default function Dashboard() {
           <p style={{ color: '#888', fontSize: 14 }}>No replies detected yet. Run a scan to check your inboxes.</p>
         ) : (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-            {replies.map((r) => (
+            {replies.map((r: any) => (
               <div key={r.id} style={replyCard}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 12 }}>
                   <div style={{ flex: 1 }}>
