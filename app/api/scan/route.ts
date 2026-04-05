@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createSupabaseServerClient, createSupabaseAdminClient } from '@/lib/supabase'
+import { createSupabaseServerClient, createSupabaseAdminClient } from '@/lib/supabase/server'
 import { fetchReplies } from '@/lib/imap'
 import { classifyReply } from '@/lib/openai'
 import { sendNotificationEmail } from '@/lib/email'

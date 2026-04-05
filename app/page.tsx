@@ -1,5 +1,5 @@
 'use client'
-import { createSupabaseBrowserClient } from '@/lib/supabase'
+import { createSupabaseBrowserClient } from '@/lib/supabase/client'
 
 export default function Home() {
   const supabase = createSupabaseBrowserClient()

@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react'
-import { createSupabaseBrowserClient } from '@/lib/supabase'
+import { createSupabaseBrowserClient } from '@/lib/supabase/client'
 import { formatDistanceToNow } from 'date-fns'
 
 export default function Dashboard() {
